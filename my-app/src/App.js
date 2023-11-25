@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg'; // Adjust the path based on your file structure
+import logo from './logo.svg'; // Use a relative path
 import './App.css';
 
 function App() {
