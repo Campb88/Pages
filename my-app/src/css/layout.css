@@ -62,14 +62,16 @@ header .banner-text {
 }
 
 header .banner-text h1 {
-   font: 90px/1.1em 'opensans-bold', sans-serif;
+   /* font: 90px/1.1em 'opensans-bold', sans-serif; */
+   font-size: 90px;
    color: #fff;
    letter-spacing: -2px;
    margin: 0 auto 18px auto;
 }
 
 header .banner-text h3 {
-   font: 18px/1.9em 'librebaskerville-regular', serif;
+   font-size: 36px;
+   font-weight: lighter;
    color: #ddd;
    margin: 0 auto;
    width: 70%;
@@ -96,6 +98,7 @@ header .social {
 
 header .social li {
    display: inline-block;
+   font-weight: bold;
    margin: 15px;
    padding: 0;
 }
@@ -147,7 +150,7 @@ header .scrolldown a:hover {
 
 /* nav-wrap */
 #nav-wrap {
-   font: 12px 'opensans-bold', sans-serif;
+   font: 18px 'opensans-bold', sans-serif;
    width: 100%;
    text-transform: uppercase;
    letter-spacing: 2.5px;
@@ -206,7 +209,7 @@ ul#nav li a:active {
 }
 
 ul#nav li.current a {
-   color: #fe6928;
+   color: #1abc9c;
 }
 
 
@@ -216,13 +219,29 @@ ul#nav li.current a {
 
 #about {
    background: #000524;
-   padding-top: 96px;
-   padding-bottom: 66px;
+   padding: 96px 30px 66px 30px;
    overflow: hidden;
+   height: 900px;
+   vertical-align: middle;
+   margin: 0 auto;
+   padding-bottom: 30px;
+}
+
+#about .container {
+   width: 70%;
+   margin: 0 auto;
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   /* Four columns */
+   grid-template-rows: auto auto;
+   /* Two rows */
+   grid-gap: 10px;
+   /* Adjust the gap between grid items */
 }
 
 #about a,
 #about a:visited {
+   text-decoration: none;
    color: #fff;
 }
 
@@ -242,28 +261,34 @@ ul#nav li.current a {
    color: #ccc;
 }
 
+
+
 #about .profile-pic {
    position: relative;
-   width: 120px;
-   height: 120px;
+   width: auto;
+   height: 240px;
    border-radius: 100%;
+   grid-area: 1 / 1 / 1 / 1;
+}
+
+#about .about-details {
+   grid-area: 1 / 2 / 2 / 5;
+   /* Start in the first row, second column, end in the second row, fifth column */
 }
 
 #about .contact-details {
-   width: 41.66667%;
+   grid-area: 2 / 2 / 3 / 4;
+   /* Start in the second row, second column, end in the third row, fourth column */
 }
 
 #about .download {
-   width: 58.33333%;
-   padding-top: 6px;
-}
-
-#about .main-col {
-   padding-right: 5%;
+   padding-top: 16px;
+   grid-area: 2 / 4 / 4 / 5;
+   /* Start in the second row, third column, end in the third row, fifth column */
 }
 
 #about .download .button {
-   margin-top: 6px;
+   padding: 16px;
    background: #444;
 }
 
@@ -1240,6 +1265,9 @@ footer .social-links li:first-child {
 .social .btn {
    padding-left: 30px;
    padding-right: 30px;
+   padding-top: 5px;
+   padding-bottom: 5px;
+
 }
 
 .social .btn i {

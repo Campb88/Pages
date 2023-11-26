@@ -5,7 +5,7 @@ class About extends Component {
     if (!this.props.data) return null;
 
     const name = this.props.data.name;
-    const profilepic = "images/" + this.props.data.image;
+    const profilepic = require("../images/profile.jpg");
     const bio = this.props.data.bio;
     const street = this.props.data.address.street;
     const city = this.props.data.address.city;
@@ -17,42 +17,41 @@ class About extends Component {
 
     return (
       <section id="about" className="fade-in">
-        <div className="row">
-          <div className="three columns">
+        <div className="container">
+          <div className="profile-pic-container">
             <img
               className="profile-pic"
               src={profilepic}
               alt="Nordic Giant Profile Pic"
             />
           </div>
-          <div className="nine columns main-col">
+          <div className="about-details">
             <h2>About Me</h2>
             <p>{bio}</p>
-            <div className="row">
-              <div className="columns contact-details">
-                <h2>Contact Details</h2>
-                <p className="address">
-                  <span>{name}</span>
-                  <br />
-                  <span>
-                    {street}
-                    <br />
-                    {city} {state}, {zip}
-                  </span>
-                  <br />
-                  <span>{phone}</span>
-                  <br />
-                  <span>{email}</span>
-                </p>
-              </div>
-              <div className="columns download">
-                <p>
-                  <a href={resumeDownload} className="button">
-                    <i className="fa fa-download"></i>Download Resume
-                  </a>
-                </p>
-              </div>
-            </div>
+          </div>
+          <div className="contact-details">
+            <h2>Contact Details</h2>
+            <p className="address">
+              <span>{name}</span>
+              <br />
+              <span>
+                {street}
+                <br />
+                {city} {state}, {zip}
+              </span>
+              <br />
+              <span>{phone}</span>
+              <br />
+              <span>{email}</span>
+            </p>
+          </div>
+          <div className="download">
+            <p>
+              <a href={resumeDownload} className="button">
+                <i className="fas fa-download"></i>Download Resume
+              </a>
+            </p>
+
           </div>
         </div>
       </section>
